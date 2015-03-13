@@ -1,0 +1,12 @@
+<?php $__env->startSection('content'); ?>
+
+<h1>Sections</h1>
+
+<p>
+	<a href="<?php echo url('admin/sections/create'); ?>">
+		Add a new section
+	</a>
+</p>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin/layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
