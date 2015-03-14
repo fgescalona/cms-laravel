@@ -20,8 +20,26 @@ class AdminSectionsController extends \BaseController {
 	public function index()
 	{
 
-		$sections = Section::all();
+		$q = Section::select();
 
+
+		if (Input::has('search')) 
+		{
+			$q->where('name', Input::get('search'));
+		}
+
+		if (Input::has('published')) 
+		{
+			$q->where('published', Input::get('published'));
+		}
+
+		if (Input::has('menu')) 
+		{
+			$q->where('menu', Input::get('menu'));
+		}
+
+
+		$sections = $q->get();
 
 		return View::make('admin/sections/list', compact('sections'));
 	}

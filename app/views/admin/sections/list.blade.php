@@ -12,6 +12,8 @@
 
 <p>There are {{ $sections->count() }} sections</p>
 
+@include('admin/sections/partials/filters')
+
 <table>
 	<thead>
 		<tr>

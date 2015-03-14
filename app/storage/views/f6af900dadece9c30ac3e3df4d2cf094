@@ -1,0 +1,14 @@
+<?php echo Form::model(Input::all(), ['route' => 'admin.sections.index', 'method' => 'GET']); ?>
+
+
+	<?php echo Form::text('search'); ?>
+
+	<?php echo Form::select('published', ['' => 'Select status', '0' => 'Draft', '1', 'Published']); ?>
+
+	<?php echo Form::select('menu', ['' => 'Menu status', '0' => 'Not in menu', '1', 'Show in menu']); ?>
+
+
+	<?php echo Form::button('Filter sections', ['type' => 'submit', 'class' => 'btn btn-primary']); ?>
+
+
+<?php echo Form::close(); ?>

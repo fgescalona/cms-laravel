@@ -10,6 +10,8 @@
 
 <p>There are <?php echo $sections->count(); ?> sections</p>
 
+<?php echo $__env->make('admin/sections/partials/filters', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 <table>
 	<thead>
 		<tr>
