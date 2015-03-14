@@ -4,14 +4,7 @@ $I->am('a CMS admin');
 $I->wantTo('Update a section');
 
 //When
-$id = $I->haveRecord('sections', [
-	'name' => 'Our company',
-	'slug_url' => 'our-company',
-	'type' => 'page',
-	'menu_order' => 2, 
-	'menu' => 1, 
-	'published' => 0
-]);
+$id = $I->haveSection();
 
 
 //And

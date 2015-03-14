@@ -11,6 +11,15 @@
 			<a href="<?php echo route('admin.sections.edit', $section->id); ?>" class="btn-edit">
 				Edit section
 			</a>
+
+			<?php echo Form::open(['route'=> ['admin.sections.destroy', $section->id], 'method' => 'DELETE']); ?>
+
+
+				<?php echo Form::button('Delete section', ['type' => 'submit', 'class' => 'btn-del']); ?>
+
+
+			<?php echo Form::close(); ?>
+
 		</p>
 
 		<table>

@@ -9,71 +9,7 @@
 	<?php echo Form::model($section, ['route' => ['admin.sections.update', $section->id], 'method' => 'PUT']); ?>
 
 
-	<p>
-		<?php echo Form::label('name', 'Name'); ?>
-
-		<?php echo Form::text('name'); ?>
-
-		<?php echo $errors->first('name', '<p class="error">:message</p>'); ?>
-
-	</p>
-		
-	<p>
-		<?php echo Form::label('slug_url', 'Slug URL'); ?>
-
-		<?php echo Form::text('slug_url'); ?>
-
-		<?php echo $errors->first('slug_url', '<p class="error">:message</p>'); ?>
-
-	</p>
-		
-	<p>
-		<?php echo Form::label('type', 'Type'); ?>
-
-		<?php echo Form::select('type', ['' => 'Select', 'page' => 'Page', 'blog' => 'Blog']); ?>
-
-		<?php echo $errors->first('type', '<p class="error">:message</p>'); ?>
-
-	</p>
-
-	<p>
-		<label>
-			<?php echo Form::radio('menu', 1); ?>
-
-			Show in menu
-		</label>
-		<label>
-			<?php echo Form::radio('menu', 0); ?>
-
-			Don't show in menu
-		</label>
-		<?php echo $errors->first('menu', '<p class="error">:message</p>'); ?>
-
-	</p>
-
-	<p>
-		<?php echo Form::label('menu_order', 'Menu order'); ?>
-
-		<?php echo Form::text('menu_order'); ?>
-
-		<?php echo $errors->first('menu_order', '<p class="error">:message</p>'); ?>
-
-	</p>
-
-	<p>
-		<label>
-			<?php echo Form::radio('published', 1); ?>
-
-			Published
-		</label>
-		<label>
-			<?php echo Form::radio('published', 0); ?>
-
-			Draft
-		</label>
-		<?php echo $errors->first('published', '<p class="error">:message</p>'); ?>
-
-	</p>
+		<?php echo $__env->make('admin/sections/partials/fields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		
 	<p>
 		<?php echo Form::submit('Update section'); ?>

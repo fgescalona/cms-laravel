@@ -4,13 +4,7 @@ $I->am('a CMS admin');
 $I->wantTo('See section details');
 
 //When
-$id = $I->haveRecord('sections', [
-	'name' => 'Our Company',
-	'slug_url' => 'our-company',
-	'menu_order' => 2, 
-	'menu' => 1, 
-	'published' => 0
-]);
+$id =  $I->haveSection();
 
 $I->amOnPage('admin/sections/' . $id);
 

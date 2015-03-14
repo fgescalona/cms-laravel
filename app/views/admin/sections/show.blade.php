@@ -11,6 +11,12 @@
 			<a href="{{ route('admin.sections.edit', $section->id) }}" class="btn-edit">
 				Edit section
 			</a>
+
+			{{ Form::open(['route'=> ['admin.sections.destroy', $section->id], 'method' => 'DELETE']) }}
+
+				{{ Form::button('Delete section', ['type' => 'submit', 'class' => 'btn-del']) }}
+
+			{{ Form::close() }}
 		</p>
 
 		<table>
