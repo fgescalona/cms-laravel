@@ -19,7 +19,11 @@ class AdminSectionsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('admin/sections/list');
+
+		$sections = Section::all();
+
+
+		return View::make('admin/sections/list', compact('sections'));
 	}
 
 

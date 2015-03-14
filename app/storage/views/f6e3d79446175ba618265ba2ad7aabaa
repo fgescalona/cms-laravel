@@ -8,5 +8,31 @@
 	</a>
 </p>
 
+<p>There are <?php echo $sections->count(); ?> sections</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Slug URL</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+		
+	<tbody>
+		<?php foreach($sections as $section): ?>
+			<tr>
+				<td class="name"> <?php echo $section->name; ?> </td>
+				<td> <?php echo $section->slug_url; ?> </td>
+				<td> 
+					<a href="<?php echo route('admin.sections.show', $section->id); ?>">Show</a>
+					<a href="<?php echo route('admin.sections.edit', $section->id); ?>">Edit</a>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+
+</table>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin/layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
