@@ -8,7 +8,9 @@
 	</a>
 </p>
 
-<p>There are <?php echo $sections->count(); ?> sections</p>
+<p>	There are <?php echo $sections->getTotal(); ?> sections, showing page <?php echo $sections->getCurrentPage(); ?> of <?php echo $sections->getLastPage(); ?>
+
+</p>
 
 <?php echo $__env->make('admin/sections/partials/filters', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
@@ -17,8 +19,8 @@
 		<tr>
 			<th>Name</th>
 			<th>Slug URL</th>
-			<th>Published</th>
 			<th>Menu</th>
+			<th>Published</th>
 			<th>Actions</th>
 		</tr>
 	</thead>
@@ -39,6 +41,9 @@
 	</tbody>
 
 </table>
+
+<?php echo $sections->links(); ?>
+
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin/layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

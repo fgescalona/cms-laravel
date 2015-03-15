@@ -10,7 +10,8 @@
 	</a>
 </p>
 
-<p>There are {{ $sections->count() }} sections</p>
+<p>	There are {{ $sections->getTotal() }} sections, showing page {{ $sections->getCurrentPage() }} of {{ $sections->getLastPage() }}
+</p>
 
 @include('admin/sections/partials/filters')
 
@@ -19,8 +20,8 @@
 		<tr>
 			<th>Name</th>
 			<th>Slug URL</th>
-			<th>Published</th>
 			<th>Menu</th>
+			<th>Published</th>
 			<th>Actions</th>
 		</tr>
 	</thead>
@@ -41,5 +42,7 @@
 	</tbody>
 
 </table>
+
+{{ $sections->links() }}
 
 @stop

@@ -51,8 +51,8 @@ class InitialTables extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('sections');
 		Schema::drop('pages');
+		Schema::drop('sections');
 	}
 
 }

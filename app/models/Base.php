@@ -3,9 +3,11 @@
 
 class Base extends Eloquent {
 
+	const PAGINATE = true;
+
 	public static $filters = [];
 	
-	public static function search(array $data = array())
+	public static function search(array $data = array(), $paginate = false)
 	{
 
 		$data = array_only($data, static::$filters);
@@ -30,6 +32,8 @@ class Base extends Eloquent {
 			}
 		}
 
-		return $q->get();
+		return $paginate ?
+			$q->paginate()
+			: $q->get();
 	}
 }
